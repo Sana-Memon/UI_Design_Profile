@@ -5,4 +5,3 @@ class ColorConstant {
   static var cyanBlue = Color(0xff0F2F44);
   static var lightWhite = Color(0xffFAFAFA);
 }
-// TODO Implement this library.
