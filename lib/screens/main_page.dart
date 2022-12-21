@@ -41,7 +41,30 @@ class _MainPageState extends State<MainPage> {
               SizedBox(
                 height: 20,
               ),
-              customElevatedButton(list[1]),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: ColorConstant.lightWhite,
+                    fixedSize: const Size(260, 40),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50))),
+                child: Row(
+                  children: const [
+                    Icon(
+                      Icons.apple,
+                      size: 30,
+                      color: Colors.black,
+                    ),
+                    Text(
+                      'Continue with Apple',
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.black,
+                      ),
+                    )
+                  ],
+                ),
+              ),
               SizedBox(
                 height: 20,
               ),
@@ -60,12 +83,34 @@ class _MainPageState extends State<MainPage> {
                     MaterialPageRoute(builder: (context) => const Login()),
                   );
                 },
-                child: Text("Sign in with password"),
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: ColorConstant.lightBlue,
+                    fixedSize: const Size(260, 40),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50))),
+                child: Row(
+                  children: const [
+                    Text(
+                      'Sign in with Password',
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.white,
+                      ),
+                    )
+                  ],
+                ),
               ),
               SizedBox(
                 height: 20,
               ),
-              Text("Don't have an account? sign up")
+              Row(
+                children: [
+                  Center(child: Text("Don't have an account?")),
+                  Center(
+                      child:
+                          TextButton(onPressed: () {}, child: Text("sign up")))
+                ],
+              )
             ],
           ),
         ));
