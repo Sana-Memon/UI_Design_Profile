@@ -13,7 +13,9 @@ class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text("This is profile pag"),
-    );
+        body: Center(
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [Image.asset("assets/images/profile.PNG")])));
   }
 }

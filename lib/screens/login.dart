@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:ui_design/screens/profile.dart';
+import 'package:ui_design/utils/color_constant.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -18,22 +19,42 @@ class _LoginState extends State<Login> {
     return Scaffold(
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Email',
-                  hintText: 'Enter Email Address',
-                )),
-            const TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Password',
-                  hintText: 'Enter Password',
-                )),
+            Image.asset("assets/images/login.png"),
+            const Text(
+              "Login to your account",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              margin: EdgeInsets.all(9),
+              child: TextField(
+                  decoration: InputDecoration(
+                prefixIcon: Icon(Icons.email),
+                border: OutlineInputBorder(),
+                labelText: 'Email',
+                hintText: 'Enter Email',
+              )),
+            ),
+            Container(
+              margin: EdgeInsets.all(9),
+              child: TextField(
+                  decoration: InputDecoration(
+                prefixIcon: Icon(Icons.lock),
+                iconColor: Colors.black,
+                border: OutlineInputBorder(),
+                labelText: 'Password',
+                hintText: 'Enter Password',
+              )),
+            ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Checkbox(
                     //only check box
@@ -49,25 +70,107 @@ class _LoginState extends State<Login> {
             ),
             ElevatedButton(
               onPressed: () {},
-              child: Text("Sign in"),
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: ColorConstant.lightBlue,
+                  fixedSize: const Size(300, 60),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50))),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Text(
+                    'Sign in',
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: Colors.white,
+                    ),
+                  )
+                ],
+              ),
             ),
-            Text("Forgot the Password"),
+            SizedBox(
+              height: 20,
+            ),
+            TextButton(onPressed: () {}, child: Text("Forgot the Password")),
             Text("or continue with"),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                ElevatedButton(onPressed: () {}, child: const Text("data")),
-                ElevatedButton(onPressed: () {}, child: const Text("data")),
-                ElevatedButton(onPressed: () {}, child: const Text("data")),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: ColorConstant.lightWhite,
+                      fixedSize: const Size(20, 40),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50))),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Icon(
+                        Icons.facebook,
+                        size: 30,
+                        color: Colors.blue,
+                      ),
+                    ],
+                  ),
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: ColorConstant.lightWhite,
+                      fixedSize: const Size(20, 40),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50))),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Icon(
+                        Icons.facebook,
+                        size: 30,
+                        color: Colors.blue,
+                      ),
+                    ],
+                  ),
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: ColorConstant.lightWhite,
+                      fixedSize: const Size(20, 40),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50))),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Icon(
+                        Icons.apple,
+                        size: 30,
+                        color: Colors.black,
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
-            ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const Profile()),
-                  );
-                },
-                child: const Text("Don't have an account? Sign up")),
+            Center(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Center(child: Text("Don't have an account?")),
+                  Center(
+                      child: TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const Profile()),
+                            );
+                          },
+                          child: Text("sign up")))
+                ],
+              ),
+            )
           ],
         ),
       ),

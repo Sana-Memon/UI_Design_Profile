@@ -45,7 +45,29 @@ class _MainPageState extends State<MainPage> {
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
                     backgroundColor: ColorConstant.lightWhite,
-                    fixedSize: const Size(260, 40),
+                    fixedSize: const Size(300, 40),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50))),
+                child: Row(
+                  children: const [
+                    Text(
+                      'Continue with Google',
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.black,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: ColorConstant.lightWhite,
+                    fixedSize: const Size(300, 40),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50))),
                 child: Row(
@@ -68,10 +90,6 @@ class _MainPageState extends State<MainPage> {
               SizedBox(
                 height: 20,
               ),
-              customElevatedButton(list[2]),
-              SizedBox(
-                height: 20,
-              ),
               Text("or"),
               SizedBox(
                 height: 20,
@@ -85,16 +103,19 @@ class _MainPageState extends State<MainPage> {
                 },
                 style: ElevatedButton.styleFrom(
                     backgroundColor: ColorConstant.lightBlue,
-                    fixedSize: const Size(260, 40),
+                    fixedSize: const Size(300, 40),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50))),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: const [
-                    Text(
-                      'Sign in with Password',
-                      style: TextStyle(
-                        fontSize: 15,
-                        color: Colors.white,
+                    Center(
+                      child: Text(
+                        'Sign in with Password',
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.white,
+                        ),
                       ),
                     )
                   ],
@@ -103,13 +124,17 @@ class _MainPageState extends State<MainPage> {
               SizedBox(
                 height: 20,
               ),
-              Row(
-                children: [
-                  Center(child: Text("Don't have an account?")),
-                  Center(
-                      child:
-                          TextButton(onPressed: () {}, child: Text("sign up")))
-                ],
+              Center(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Center(child: Text("Don't have an account?")),
+                    Center(
+                        child: TextButton(
+                            onPressed: () {}, child: Text("sign up")))
+                  ],
+                ),
               )
             ],
           ),
@@ -121,7 +146,7 @@ class _MainPageState extends State<MainPage> {
       onPressed: () {},
       style: ElevatedButton.styleFrom(
           backgroundColor: ColorConstant.lightWhite,
-          fixedSize: const Size(260, 40),
+          fixedSize: const Size(300, 40),
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(50))),
       child: Row(
