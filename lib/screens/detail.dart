@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
+import '../utils/color_constant.dart';
+
 class DetailDescription extends StatefulWidget {
   const DetailDescription({super.key});
 
@@ -31,7 +33,7 @@ class _DetailDescriptionState extends State<DetailDescription> {
             style: TextStyle(fontSize: 30),
           ),
           Text("520N Beaudry Ave, Los Angeles"),
-          Center(
+          Container(
             child: Row(
               children: [
                 Image.asset("../assets/icons/yellow/bed.png"),
@@ -42,6 +44,38 @@ class _DetailDescriptionState extends State<DetailDescription> {
                 Text("1 garage")
               ],
             ),
+          ),
+          Row(
+            children: [
+              Image.asset("../assets/images/man.png"),
+              Column(
+                children: [
+                  Text(
+                    "Rebecca Teetha",
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  Text(
+                    "Rebecca Teetha",
+                    style: TextStyle(fontSize: 15),
+                  )
+                ],
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: ColorConstant.cyanBlue,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50))),
+                child: Row(
+                  children: [
+                    Image.asset("../assets/icons/white/call.png"),
+                    Text("Call"),
+                  ],
+                ),
+              ),
+              Text(
+                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley")
+            ],
           )
         ],
       ),
