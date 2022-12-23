@@ -73,8 +73,24 @@ class _DetailDescriptionState extends State<DetailDescription> {
                   ],
                 ),
               ),
-              Text(
-                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley")
+            ],
+          ),
+          const Text(
+              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley"),
+          Text("Gallery"),
+          Row(
+            children: [
+              Image.asset("assets/images/1a.png"),
+              Image.asset("assets/images/1b.png"),
+              Image.asset("assets/images/1c.png"),
+            ],
+          ),
+          Text("Price"),
+          Row(
+            children: [
+              Text("55678967"),
+              Spacer(),
+              ElevatedButton(child: Text("BUY NOW"), onPressed: () {})
             ],
           )
         ],
